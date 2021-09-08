@@ -11,7 +11,7 @@ BREW_API_KEY = 'd6e7765af658b5b34cd1348ff2cd6aa6' # dummy/old example key
 RED_LED_PIN = 37
 GREEN_LED_PIN = 33
 FLOW_SENSOR_1 = 32
-FLOw_SENSOR_2 = 36
+FLOW_SENSOR_2 = 36
 
 # board mode is easier
 GPIO.setmode(GPIO.BOARD)
@@ -76,6 +76,7 @@ def tap2Tick(channel):
 def post_drink_1():
     global tap1
     global swiped_id
+    global swiped_user_name
     if tap1['last_tick_time'] < time.time() - 1.5:
         print('DRINK OVER!')
         print(str(tap1['ticks_this_drink'])+ ' total ticks this drink')
@@ -118,6 +119,7 @@ def post_drink_1():
 def post_drink_2():
     global tap2
     global swiped_id
+    global swiped_user_name
     if tap2['last_tick_time'] < time.time() - 1.5:
         print('DRINK OVER!')
         print(str(tap1['ticks_this_drink'])+ ' total ticks this drink')
@@ -184,10 +186,10 @@ while True:
             for i in range(0,5):
                 GPIO.output(RED_LED_PIN, GPIO.LOW)
                 GPIO.output(GREEN_LED_PIN, GPIO.HIGH)
-                sleep(.5)
+                time.sleep(.5)
                 GPIO.output(RED_LED_PIN, GPIO.HIGH)
                 GPIO.output(GREEN_LED_PIN, GPIO.LOW)
-                sleep(.5)
+                time.sleep(.5)
             swiped_id = None
             swiped_user_name = None
 
