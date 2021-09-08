@@ -1,2 +1,4 @@
 # brewberry
 Raspberry pi code to go on a pi and make API calls to kegbot-server
+
+WARNING: THIS CODE IS OLD, HACKY, WRITTEN BEFORE I SPOKE PYTHON, AND LIKELY BROKEN IN LOADS OF WAYS. YOU SHOULD REALLY JUST IGNORE IT.
